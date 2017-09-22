@@ -5,16 +5,16 @@
 ## By Sara Spink
 
 ## Description:
+Interface for a non-profit administrator to manage projects and volunteers.
 
 ## Setup/Installation:
 
 
 ## Specs
 
-As a non-profit employee, I want to view, add, update and delete projects.
-As a non-profit employee, I want to view and add volunteers.
-As a non-profit employee, I want to add volunteers to a project.
-
+- A user can view, add, update and delete projects.
+- A user can to view and add volunteers.
+- A user can edit projects and remove volunteers.
 
 ## Technologies Used
 
