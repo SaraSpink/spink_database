@@ -12,7 +12,7 @@ get('/') do
   erb(:index)
 end
 
-post('/project') do
+post('/projects') do
   title = params["title"]
   new_project = Project.new({:id=> nil, :title=> title})
   new_project.save()
@@ -20,7 +20,7 @@ post('/project') do
   erb(:index)
 end
 
-get('/project/:id') do
+get('/projects/:id') do
   @project_id = Project.all()
   @project = Word.find(params[:id])
   erb(:project_list)
