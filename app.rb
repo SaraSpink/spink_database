@@ -5,4 +5,4 @@ require("./lib/project")
 require("./lib/volunteer")
 require("pg")
 
-DB = PG.connect({:dbname => 'volunteer_test'})
+DB = PG.connect({:dbname => 'volunteer_tracker_test'})
