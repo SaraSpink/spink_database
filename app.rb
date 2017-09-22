@@ -21,7 +21,7 @@ post('/projects') do
 end
 
 get('/projects/:id') do
-  @project_id = Project.all()
-  @project = Word.find(params[:id])
+  @project_list = Project.all()
+  @project = Project.find(params[:id])
   erb(:project_list)
 end

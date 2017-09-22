@@ -10,11 +10,12 @@
   </div>
 </form>
 
+
 <% if @project_list.any?() %>
-<h3>Current projects:</h3>
+<h2>Current projects:</h2>
 
 <% @project_list.each do |project| %>
-  <h2><%= project.title %></a></h2>
+  <h3><a href="/projects/<%= project.id() %>"><%= project.title %></a></h3>
 <% end %>
 
 <% else %>
