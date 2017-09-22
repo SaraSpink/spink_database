@@ -21,7 +21,7 @@ post('/projects') do
 end
 
 get('/projects/:id') do
-  @project_list = Project.all()
-  @project = Project.find(params[:id])
-  erb(:project_list)
+  @project = Project.find(params[:id].to_i())
+
+  erb(:project_detail)
 end
