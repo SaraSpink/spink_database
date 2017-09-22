@@ -7,6 +7,10 @@ class Project
     @id = attributes[:id]
   end
 
+  def title
+    @title
+  end
+
   def id
     @id
   end
@@ -19,4 +23,16 @@ class Project
   def ==(another_project)
     self.title().==(another_project.title()).&(self.id().==(another_project.id()))
   end
-end
+
+  def self.all()
+    all_projects = DB.exec('SELECT * FROM projects;')
+    projects = []
+      all_projects.each() do |project|
+        title = project.fetch("title")
+        id = project.fetch("id").to_i
+        projects.push(Project.new({:title => title, :id => id}))
+      end
+    projects
+  end
+
+end #Project class
