@@ -2,6 +2,7 @@
 
 <h3>Create new project: </h3>
 
+<div class="jumbotron">
 <form action="/projects" method="post">
   <div class="form-group">
     <label for="title">title: </label>
@@ -9,7 +10,7 @@
     <button type="submit" class="btn btn-info">Create Project</button>
   </div>
 </form>
-
+</div>
 
 <% if @project_list.any?() %>
 <h2>Current projects:</h2>
