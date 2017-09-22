@@ -11,4 +11,12 @@ class Volunteer
   def name
     @name
   end
+
+  def project_id
+    @project_id
+  end
+
+  def ==(another_volunteer)
+  self.name().==(another_volunteer.name()).&(self.id().==(another_volunteer.id())).&(self.project_id().==(another_volunteer.project_id()))
+end
 end
