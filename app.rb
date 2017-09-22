@@ -12,15 +12,16 @@ get('/') do
   erb(:index)
 end
 
-post('/') do
-  @project_app = params["title"]
-  new_project = Project.new({:id=> @id_app, :title=> @title_app})
-  new_project.save
+post('/project') do
+  title = params["title"]
+  new_project = Project.new({:id=> nil, :title=> title})
+  new_project.save()
+  @project_list = Project.all()
   erb(:index)
 end
 
 get('/project/:id') do
-  @project_list = Project.all()
-  @project = Project.find(params[:id])
+  @project_id = Project.all()
+  @project = Word.find(params[:id])
   erb(:project_list)
 end
