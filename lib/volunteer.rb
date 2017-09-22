@@ -4,7 +4,7 @@ class Volunteer
 
   def initialize(attributes)
     @name = attributes[:name]
-    @project_id = attributes[:project_id]
+    @project_id = (attributes[:project_id]).to_i
     @id = attributes[:id]
   end
 
@@ -30,5 +30,10 @@ class Volunteer
         volunteers.push(Volunteer.new({:name => name, :project_id => project_id, :id => id}))
       end
     volunteers
+  end
+
+  def save
+    saved_volunteer = DB.exec("INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', #{@project_id}) RETURNING id;")
+    @id = saved_volunteer.first().fetch("id").to_i
   end
 end #Volunteer class
