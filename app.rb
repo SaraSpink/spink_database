@@ -22,5 +22,10 @@ end
 
 get('/projects/:id') do
   @project = Project.find(params[:id].to_i())
-  erb(:project_detail)
+  erb(:detail)
+end
+
+get('/projects/:id/edit') do
+  @project = Project.find(params[:id].to_i())
+  erb(:edit)
 end
