@@ -17,7 +17,7 @@ describe Project do
     it 'returns the id of the project after saving project' do
       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
       project.save
-      expect(project.id).to be_an_instance_of Integer
+      expect(project.id).to be_an_instance_of Fixnum
     end
   end
 
@@ -47,7 +47,7 @@ describe Project do
     it 'saves a project which generates a unique id' do
       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
       project.save
-      expect(project.id).to be_an_instance_of Integer
+      expect(project.id).to be_an_instance_of Fixnum
       expect(project.title).to eq 'Teaching Kids to Code'
 
     end
