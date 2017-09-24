@@ -1,0 +1,19 @@
+<h1> Edit Project Details: </h1>
+
+<div class="jumbotron">
+<h2><%= @project.title() %></h2>
+<h3>Project code: <%= @project.id() %></h3>
+</div>
+
+<h2>Edit Project</h2>
+
+<form action="/projects/<%= @project.id %>/edit" method="post">
+  <label for="title">Rename this project:</label>
+  <input name="title" type="text">
+  <button type="submit">Update Project</button>
+</form>
+
+<br>
+<div class="container">
+  <a href="/"><button class="btn">Return Home</a>
+</div>
