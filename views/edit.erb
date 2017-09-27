@@ -4,15 +4,16 @@
 <h2><%= @project.title() %></h2>
 <h3>Project code: <%= @project.id() %></h3>
 <% if @project.volunteers.any? %>
-<h1>Volunteers:</h1>
 
-<ul>
-  <% @project.volunteers.each do |volunteer| %>
-    <li><%= volunteer.name %></li>
-  <% end %>
-</ul>
+<h3>Volunteers:</h3>
+  <ul>
+    <% @project.volunteers.each do |volunteer| %>
+      <li><%= volunteer.name %></li>
+    <% end %>
+  </ul>
 <% end %>
 </div>
+
 <form action="/projects/<%= @project.id %>/delete" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete Project</button>

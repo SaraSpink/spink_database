@@ -30,7 +30,7 @@ post('/projects/:id/volunteers') do
   name = params['name']
   volunteer = Volunteer.new({:name => name, :project_id => @project.id})
   volunteer.save
-  redirect("/projects/#{@project.id}")
+  redirect("/projects/#{@project.id}/edit")
 end
 
 get('/projects/:id/edit') do
