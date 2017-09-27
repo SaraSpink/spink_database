@@ -43,11 +43,11 @@ get('/projects/:id/delete') do
   erb(:edit)
 end
 
-post('/projects/:id/delete') do
+delete('/projects/:id/delete') do
   title = params['title']
   @project_id = params[:id]
   @project = Project.find(params["id"].to_i)
   @project.delete()
   Project.all()
-  erb(:edit)
+  redirect('/')
 end

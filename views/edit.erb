@@ -4,7 +4,7 @@
 <h2><%= @project.title() %></h2>
 <h3>Project code: <%= @project.id() %></h3>
 </div>
-<form action="projects/<%= @project.id %>/delete" method="post">
+<form action="/projects/<%= @project.id %>/delete" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete Project</button>
 </form>
